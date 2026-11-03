@@ -1,26 +1,85 @@
 @import "tailwindcss";
+@plugin "daisyui";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@plugin "daisyui/theme" {
+  name: "pashe";
+  default: true;
+  prefersdark: false;
+  color-scheme: light;
+  --color-base-100: #fffdf8;
+  --color-base-200: #f6f1e7;
+  --color-base-300: #e8e0cf;
+  --color-base-content: #1f2a26;
+  --color-primary: #0f766e;
+  --color-primary-content: #ffffff;
+  --color-secondary: #d97706;
+  --color-secondary-content: #ffffff;
+  --color-accent: #0ea5a4;
+  --color-accent-content: #04201c;
+  --color-neutral: #17302b;
+  --color-neutral-content: #f6f1e7;
+  --color-info: #0284c7;
+  --color-success: #16a34a;
+  --color-warning: #f59e0b;
+  --color-error: #dc2626;
+  --radius-box: 1rem;
+  --radius-field: 0.75rem;
+  --radius-selector: 9999px;
 }
+
+@plugin "daisyui/theme" {
+  name: "pashedark";
+  default: false;
+  prefersdark: true;
+  color-scheme: dark;
+  --color-base-100: #0f1b18;
+  --color-base-200: #14231f;
+  --color-base-300: #1f3730;
+  --color-base-content: #e8efe9;
+  --color-primary: #2dd4bf;
+  --color-primary-content: #04201c;
+  --color-secondary: #fbbf24;
+  --color-secondary-content: #2a1a00;
+  --color-accent: #5eead4;
+  --color-accent-content: #04201c;
+  --color-neutral: #1f3730;
+  --color-neutral-content: #e8efe9;
+  --color-info: #38bdf8;
+  --color-success: #4ade80;
+  --color-warning: #fbbf24;
+  --color-error: #f87171;
+  --radius-box: 1rem;
+  --radius-field: 0.75rem;
+  --radius-selector: 9999px;
+}
+
+@custom-variant dark (&:where([data-theme="pashedark"], [data-theme="pashedark"] *));
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-sans: var(--font-body);
+  --font-display: var(--font-heading);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body), system-ui, sans-serif;
+}
+
+/* one heading style used by every section */
+.section-title {
+  font-family: var(--font-heading), Georgia, serif;
+  font-weight: 700;
+  font-size: clamp(1.75rem, 3.2vw, 2.5rem);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+.section-sub {
+  color: color-mix(in oklab, var(--color-base-content) 70%, transparent);
+  max-width: 40rem;
+}
+
+.hero-bg {
+  background:
+    radial-gradient(60rem 30rem at 85% -10%, color-mix(in oklab, var(--color-secondary) 22%, transparent), transparent 60%),
+    radial-gradient(50rem 28rem at -10% 10%, color-mix(in oklab, var(--color-primary) 22%, transparent), transparent 60%),
+    var(--color-base-100);
 }
