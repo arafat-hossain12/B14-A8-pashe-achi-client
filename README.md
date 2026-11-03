@@ -1,36 +1,26 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Pashe Achi - Social Development Events Platform
 
-## Getting Started
+**Live site:** https://YOUR-VERCEL-URL.vercel.app
 
-First, run the development server:
+Pashe Achi ("I am beside you") is a community platform where people create, join and track
+social service events: clothes distribution, tree plantation, blood donation, clean-ups and more.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Features
+- Email/password and Google login with Better Auth. Password rule: uppercase + lowercase + 6 or more characters
+- JWT-protected Express API; only the creator can update or delete their own events
+- Create events with validation. Past dates are rejected on both the client and the server
+- Upcoming events page with search and event-type filter; past events never appear
+- One-click Join Event with duplicate protection, plus a Joined Events page sorted by date
+- Manage Events page to update or delete your own events
+- Light/dark theme toggle, loading skeletons, profile view and update
+- Fully responsive layout, toast notifications instead of browser alerts
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Tech stack
+Next.js (App Router), TypeScript, Tailwind CSS, DaisyUI, Better Auth (MongoDB adapter), JWT,
+Express.js, MongoDB.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Run locally
+1. `npm install`
+2. Copy `.env.example` to `.env.local` and fill in the values
+3. Start the API server (separate repo) on port 5000
+4. `npm run dev`
