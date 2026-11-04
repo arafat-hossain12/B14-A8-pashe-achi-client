@@ -1,6 +1,6 @@
-# Pashe Achi - Social Development Events Platform
+﻿# Pashe Achi - Social Development Events Platform
 
-**Live site:** https://YOUR-VERCEL-URL.vercel.app
+**Live site:** https://b14-a8-pashe-achi-client.vercel.app
 
 Pashe Achi ("I am beside you") is a community platform where people create, join and track
 social service events: clothes distribution, tree plantation, blood donation, clean-ups and more.
